@@ -4,28 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace problem_1
+namespace problem7
 {
     internal class Program
     {
-
-
-        public static int Sum(int num1, int num2)
+        static void Main(string[] args)
         {
-            int total;
-            total = num1 + num2;
-            return total;
-        }
-
-        public static void Main()
+            try
             {
-                Console.Write("Enter two numbers: ");
-                int number1 = Convert.ToInt32(Console.ReadLine());
-                int number2 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("\nThe sum of two numbers is : {0} \n", Sum(number1, number2));
-
+                int result = 15 / int.Parse("0");
+                Console.WriteLine(result);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.Write(e.Message);
+                Console.WriteLine(e.StackTrace);
                 Console.ReadLine();
             }
+            finally
+            {
+                Console.Write("Re-try with a different number.");
+            }
         }
-    } 
-
+    }
+}
