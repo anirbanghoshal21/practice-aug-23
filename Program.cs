@@ -4,28 +4,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace problem_1
+namespace problem5
 {
     internal class Program
     {
-
-
-        public static int Sum(int num1, int num2)
+        static void Main(string[] args)
         {
-            int total;
-            total = num1 + num2;
-            return total;
-        }
+            employee[] employees = new employee[4];
 
-        public static void Main()
+            for (int i = 0; i < 4; i++)
             {
-                Console.Write("Enter two numbers: ");
-                int number1 = Convert.ToInt32(Console.ReadLine());
-                int number2 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("\nThe sum of two numbers is : {0} \n", Sum(number1, number2));
-
-                Console.ReadLine();
+                Console.WriteLine("Enter empno");
+                int empno = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter ename");
+                string ename = Console.ReadLine();
+                Console.WriteLine("Enter salary");
+                double sal = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Enter deptno");
+                int deptno = Convert.ToInt32(Console.ReadLine());
+                employees[i].AcceptData(empno, ename, sal, deptno);
             }
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine = (employees[i].Display());
+            }
+            Console.Read();
         }
-    } 
+    }
+    struct employee
+    {
+        int _empno;
+        string _ename;
+        double _sal;
+        int _deptno;
 
+        public void AcceptData(int empno, string ename, double sal, int deptno);
+        {
+        this._empno = empno;
+        this._ename = ename;
+        this._sal = sal;
+        this._deptno = deptno;
+       }
+    public void Display();
+    {
+    Console.WriteLine(_empno);
+            
+        }
+    }
+}
