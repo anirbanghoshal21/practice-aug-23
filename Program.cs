@@ -4,28 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace problem_1
+namespace problem2
 {
     internal class Program
     {
-
-
-        public static int Sum(int num1, int num2)
+        static void Main(string[] args)
         {
-            int total;
-            total = num1 + num2;
-            return total;
-        }
+            int a, b, r;
+            Console.Write("Enter any two numbers: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            r = a + b;
+            Console.Write("Sum of Two Numbers: " + r);
 
-        public static void Main()
-            {
-                Console.Write("Enter two numbers: ");
-                int number1 = Convert.ToInt32(Console.ReadLine());
-                int number2 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("\nThe sum of two numbers is : {0} \n", Sum(number1, number2));
-
-                Console.ReadLine();
-            }
+            Console.ReadLine();
         }
-    } 
+        }
+    }
 
